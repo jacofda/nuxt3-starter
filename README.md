@@ -1,4 +1,4 @@
-# Nuxt3 starter pigna+decorators !
+# Nuxt3 starter pigna+decorators+tailwind !
 
 Nuxt version **3.6.5**, otherwise can not build with the **@decorators**
 
