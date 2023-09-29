@@ -1,5 +1,5 @@
 {
-    "name": "front-mow-www-v3",
+    "name": "nuxt3-starter",
     "private": true,
     "scripts": {
         "build": "nuxt build",

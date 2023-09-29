@@ -21,7 +21,7 @@ RUN npm install pm2 -g
 RUN npm run build
 
 # LABEL per Traefik
-LABEL traefik.http.routers.whoami.rule=Host(`www3.mow.it`)
+LABEL traefik.http.routers.whoami.rule=Host(`websitedomain.com`)
 LABEL traefik.http.routers.whoami.entrypoints=http
 LABEL traefik.enable=true
 

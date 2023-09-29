@@ -2,20 +2,20 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 457041333392.dkr.ecr.eu-west-1.amazonaws.com
+      - aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin ID-ECR.ecr.eu-west-1.amazonaws.com
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=14.2_$COMMIT_HASH
-      - IMAGE_URI="457041333392.dkr.ecr.eu-west-1.amazonaws.com/front-www3-mow:${IMAGE_TAG}"
-      - LATEST_IMAGE_URI="457041333392.dkr.ecr.eu-west-1.amazonaws.com/front-www3-mow:latest"
+      - IMAGE_URI="ID-ECR.dkr.ecr.eu-west-1.amazonaws.com/name-of-the-project:${IMAGE_TAG}"
+      - LATEST_IMAGE_URI="ID-ECR.dkr.ecr.eu-west-1.amazonaws.com/name-of-the-project:latest"
   build:
     commands:
-      - aws s3 cp s3://mow-environments/www3-mow/.env .env
+      - aws s3 cp s3://bucket-with-the-env/.env .env
       - docker build -t "$IMAGE_URI" .
       - docker tag "$IMAGE_URI" "$LATEST_IMAGE_URI"
   post_build:
     commands:
       - docker push "$IMAGE_URI"
       - docker push "$LATEST_IMAGE_URI"
-      - printf '[{"name":"%s","imageUri":"%s"}]' "www-mow" "$IMAGE_URI" > images.json
+      - printf '[{"name":"%s","imageUri":"%s"}]' "www-name" "$IMAGE_URI" > images.json
 artifacts:
   files: images.json
