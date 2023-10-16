@@ -1,4 +1,4 @@
 const build = {
-  transpile: ['gsap'],
+  transpile: [''],
 };
 export default build;

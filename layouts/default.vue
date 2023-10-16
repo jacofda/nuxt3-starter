@@ -6,11 +6,11 @@
   </div>
 </template>
 <script setup lang="ts">
-import { useLayoutStore } from '~/store/layouts'
+import { useLayoutStore } from '~/store/layouts';
 useHead({
   bodyAttrs: {
-    class: `min-h-screen bg-white selection:bg-primary/10 selection:text-primary dark:bg-gray-900`,
+    class: ``,
   },
 });
-const layoutsStore = useLayoutStore()
+const layoutsStore = useLayoutStore();
 </script>

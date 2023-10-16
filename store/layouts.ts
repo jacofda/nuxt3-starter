@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia';
+import { menuItem } from 'types/Components';
 
 export const useLayoutStore = defineStore({
   id: 'layouts-store',
@@ -56,11 +57,15 @@ export const useLayoutStore = defineStore({
       for (const item in this.menuItems) {
         this.menuItems[item].show = false;
       }
+      this.mobileMenu = false;
     },
   },
   getters: {
     menu: (state: any) => state.menuItems,
-    is_mobile: (state: any) => state.mobileMenu,
+    isMobileOpen: (state: any) => state.mobileMenu,
+    isDropdownOpen: (state: any) => {
+      return state.menuItems.find((mi: menuItem) => mi.show && mi.dropdown) !== undefined;
+    },
     about: (state: any) => state.menuItems[0],
     services: (state: any) => state.menuItems[1],
   },

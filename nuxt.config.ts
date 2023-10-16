@@ -24,6 +24,7 @@ export default defineNuxtConfig({
   postcss,
   routeRules,
   runtimeConfig,
+  //swiper,
   vite: {
     server: {
       watch: {
