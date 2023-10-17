@@ -1,12 +1,13 @@
 import antfu from '@antfu/eslint-config'
 
-export default antfu({
-  'vue/block-order': ['error', {
-    order: ['template', 'script', 'style'],
-  }],
-  'rules': {
-    'vue/block-order': ['error', {
-      order: ['template', 'script', 'style'],
-    }],
+export default antfu(
+  {},
+  {
+    rules: {
+      'vue/block-order': 'off',
+      'vue/html-self-closing': 'off',
+      'vue/valid-define-emits': 'off',
+      'vue/operator-linebreak': 'off',
+    },
   },
-})
+)
