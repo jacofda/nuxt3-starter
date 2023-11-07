@@ -8,6 +8,7 @@ export default antfu(
       'vue/html-self-closing': 'off',
       'vue/valid-define-emits': 'off',
       'vue/operator-linebreak': 'off',
+      'arrow-parens': 'off',
     },
   },
 )
